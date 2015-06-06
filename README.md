@@ -3,12 +3,15 @@ Solarized powerline style theme for zsh
 
 Forked from [agnoster's theme](https://gist.github.com/3712874) and influenced by [jeremyFreeAgent's theme](https://github.com/jeremyFreeAgent/oh-my-zsh-powerline-theme).
 
-###Prerequisites###
+### Preview
+![preview] (https://raw.github.com/houjunchen/solarized-powerline/master/preview.png)
+
+### Prerequisites
 
 Install your favorite version of
 [Powerline-patched fonts](https://github.com/Lokaltog/powerline-fonts)
 
-###Installation###
+### Installation
 
 ```
 git clone https://github.com/houjunchen/solarized_powerline.git
