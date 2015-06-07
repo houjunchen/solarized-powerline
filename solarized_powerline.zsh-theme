@@ -26,8 +26,10 @@
 # A few utility functions to make it easy and re-usable to draw segmented prompts
 
 CURRENT_BG='NONE'
+# \ue0b0
 SEGMENT_SEPARATOR=''
-SEGMENT_SEPARATOR_RIGHT='\ue0b2'
+# \ue0b2
+SEGMENT_SEPARATOR_RIGHT=''
 
 # Begin a segment
 # Takes two arguments, background and foreground. Both can be omitted,
@@ -156,7 +158,7 @@ prompt_dir() {
 prompt_virtualenv() {
   local virtualenv_path="$VIRTUAL_ENV"
   if [[ -n $virtualenv_path && -n $VIRTUAL_ENV_DISABLE_PROMPT ]]; then
-    prompt_segment blue black "(`basename $virtualenv_path`)"
+    prompt_segment cyan black "(`basename $virtualenv_path`)"
   fi
 }
 
@@ -174,25 +176,27 @@ prompt_status() {
   [[ -n "$symbols" ]] && prompt_segment black default "$symbols"
 }
 
+# Time: current time
 prompt_time() {
-  prompt_segment_right white black '%D{%H:%M:%S} '
+  prompt_segment_right 250 black '%D{%H:%M:%S} '
 }
 
 ## Main prompt
 build_prompt() {
   RETVAL=$?
   prompt_status
-  prompt_virtualenv
   prompt_context
   prompt_dir
+  prompt_virtualenv
   prompt_git
   prompt_hg
   prompt_end
 }
+
+## Right prompt
 build_rprompt() {
   prompt_time
 }
 
 PROMPT='%{%f%b%k%}$(build_prompt) '
-RPROMPT='%T'
 RPROMPT='%{%f%b%k%}$(build_rprompt)'
