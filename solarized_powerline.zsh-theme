@@ -195,7 +195,16 @@ build_prompt() {
 
 ## Right prompt
 build_rprompt() {
+  prompt_vi
   prompt_time
+}
+
+prompt_vi() {
+  if [[ -n $N_MODE || -n $MODE_INDICATOR ]]; then
+    N_MODE="[N] "
+    I_MODE="[I] "
+    prompt_segment_right 246 black "`vi_mode_prompt_info`"
+  fi
 }
 
 PROMPT='%{%f%b%k%}$(build_prompt) '
