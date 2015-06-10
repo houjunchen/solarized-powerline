@@ -157,7 +157,7 @@ prompt_dir() {
 # Virtualenv: current working virtualenv
 prompt_virtualenv() {
   local virtualenv_path="$VIRTUAL_ENV"
-  if [[ -n $virtualenv_path && -n $VIRTUAL_ENV_DISABLE_PROMPT ]]; then
+  if [[ -n $virtualenv_path && $SP_DISABLE_VIRTUAL_ENV_PROMPT != true ]]; then
     prompt_segment cyan black "(`basename $virtualenv_path`)"
   fi
 }
@@ -200,7 +200,7 @@ build_rprompt() {
 }
 
 prompt_vi() {
-  if [[ -n $N_MODE || -n $MODE_INDICATOR ]]; then
+  if [[ -n $N_MODE || -n $MODE_INDICATOR ]] && [[ $SP_DISABLE_VI_INDICATOR != true ]]; then
     N_MODE="[N] "
     I_MODE="[I] "
     prompt_segment_right 246 black "`vi_mode_prompt_info`"
