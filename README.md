@@ -8,6 +8,18 @@ Forked from [agnoster's theme](https://gist.github.com/3712874) and influenced b
 
 ![preview2](https://raw.github.com/houjunchen/solarized-powerline/master/preview2.png)
 
+### Information segments
+* Left prompt
+  1. Command status
+  2. User@hostname (optional)
+  3. Working directory
+  4. Python virtual environment (option: `SP_DISABLE_VIRTUAL_ENV_PROMOT`)
+  5. Git status
+  6. Hg status
+* Right prompt
+  1. Zsh vi mode indicator (option: `SP_DISABLE_VI_INDICATOR`)
+  2. time
+
 ### Prerequisites
 
 Install your favorite version of
