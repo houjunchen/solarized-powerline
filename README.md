@@ -16,13 +16,14 @@ Install your favorite version of
 ### Installation
 
 ```
-git clone https://github.com/houjunchen/solarized_powerline.git
-ln -s solarized_powerline.zsh-theme ~/.oh-my-zsh/themes/solarized_powerline.zsh-theme
+git clone https://github.com/houjunchen/solarized-powerline.git
+cd solarized-powerline
+ln -s solarized-powerline.zsh-theme ~/.oh-my-zsh/themes/solarized-powerline.zsh-theme
 ```
 Note: To avoid `too many levels of symbolic links`, you may need to use absolute target in `ln -s`.
 
 Modify ~/.zshrc setting
 
 ```
-ZSH_THEME="solarized_powerline"
+ZSH_THEME="solarized-powerline"
 ```
